@@ -1,0 +1,16 @@
+name = "real-estate-prospecting-app"
+main = "worker.js"
+compatibility_date = "2026-08-27"
+
+[dev]
+ip = "127.0.0.1"
+port = 8787
+
+[assets]
+directory = "."
+binding = "ASSETS"
+html_handling = "none"
+run_worker_first = ["/", "/dashboard", "/dashboard/", "/api/*"]
+
+[vars]
+ENABLE_LLM_EXPLANATIONS = "false"

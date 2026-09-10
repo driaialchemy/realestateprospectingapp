@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Real Estate Prospecting</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/faq-widget.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <p class="notice" role="note">
+        Internal demo over synthetic Arizona data. No authentication and no live scoring.
+        Do not load real client PII into this MVP.
+      </p>
+      <p id="errorBanner" class="error-banner" hidden></p>
+
+      <section class="toolbar" aria-label="Lead filters">
+        <div>
+          <p class="eyebrow">Pioneer Title</p>
+          <h1>Prospecting Dashboard</h1>
+        </div>
+        <div class="controls">
+          <label>
+            Relationship
+            <select id="relationshipFilter">
+              <option value="all">All relationships</option>
+            </select>
+          </label>
+          <label>
+            Minimum score
+            <input id="scoreFilter" type="range" min="0" max="100" value="55">
+            <span id="scoreValue">55+</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Lead summary">
+        <div>
+          <span id="visibleCount">0</span>
+          <p>visible leads</p>
+        </div>
+        <div>
+          <span id="averageScore">0</span>
+          <p>average score</p>
+        </div>
+        <div>
+          <span id="topMetro">-</span>
+          <p>top metro</p>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th><button data-sort="name">Name</button></th>
+                <th><button data-sort="metro">ZIP / Metro</button></th>
+                <th><button data-sort="relationship_type">Relationship</button></th>
+                <th><button data-sort="propensity_score">Score</button></th>
+                <th>Top reason</th>
+                <th><button data-sort="last_contact_date">Last contact</button></th>
+              </tr>
+            </thead>
+            <tbody id="leadRows"></tbody>
+          </table>
+        </div>
+        <aside class="detail" id="detailPane" aria-live="polite">
+          <p class="eyebrow">Lead detail</p>
+          <h2>Select a lead</h2>
+          <p class="muted">Ranked scores and explanations are generated from structured synthetic data.</p>
+        </aside>
+      </section>
+    </main>
+    <script type="module" src="/app.js"></script>
+    <script type="module" src="/faq-widget.js"></script>
+  </body>
+</html>
