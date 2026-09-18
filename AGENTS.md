@@ -61,3 +61,17 @@ data_policy:
   tracked_fixture_notes:
     - "synthetic_hidden_equity_data_az (1).xlsx is a synthetic sample export; do not replace with real data."
     - "scoresummary.docx is a local summary fixture; do not replace with private data."
+
+# Audit remediation metadata
+audit_path: audit/multi_repo/2026-09-18/repo_realestateprospectingapp_20260918T004905Z.json
+risk_level: HIGH
+human_review_required: true
+audit_findings:
+  - "Spreadsheet/data export files found: synthetic_hidden_equity_data_az (1).xlsx"
+  - "Cloud deployment configuration present: wrangler.toml"
+  - "Risk level is HIGH, expected LOW."
+  - "Missing CLAUDE.md."
+  - "Dependency manifests present: package.json"
+  - "Missing CLAUDE.md — no agent policy defined."
+  - "Missing AGENTS.md — no machine-readable safety policy."
+

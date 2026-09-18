@@ -44,3 +44,20 @@ Use environment variables or platform-managed secrets for all credentials. Keep 
 ## Agent Access Boundary
 
 This repo mixes app code, static assets, and generated data. Agents should prefer app source and docs (`app.js`, `worker.js`, `scoring.js`, `*.css`, `*.html`, `README.md`) and avoid opening spreadsheet/document exports unless the task explicitly concerns fixture handling.
+
+## Audit Remediation Notes
+
+- Audit path: $AuditFile
+- Risk level from audit: $risk.
+- Addressed audit issues: Spreadsheet/data export files found: synthetic_hidden_equity_data_az (1).xlsx; Cloud deployment configuration present: wrangler.toml; Risk level is HIGH, expected LOW.; Missing CLAUDE.md.; Dependency manifests present: package.json; Missing CLAUDE.md — no agent policy defined.; Missing AGENTS.md — no machine-readable safety policy.
+
+
+## Data Export Boundary
+
+Spreadsheet/data export files detected by audit: synthetic_hidden_equity_data_az (1).xlsx. Keep generated exports gitignored unless they are documented fixtures. Do not replace synthetic/sample fixtures with real operational data.
+
+
+## Human Review Required
+
+This audit classified the repo as HIGH risk. Agents may draft governance/documentation updates, but credential, provider, database, deployment, and data-export remediation requires human review before code or data changes.
+
